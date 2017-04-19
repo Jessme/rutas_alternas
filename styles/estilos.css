@@ -252,15 +252,18 @@ float:left;}
 	float: left;}
 
 		#video{margin-left: 10px;}
-		#comaprtir{margin: 20px;}
+		
 
 	#secgal{width: 470px;
-	height:530px;
+	height:570px;
 	background: #fff;
 	margin-top: 20px;
 	margin-left: 20px;
 	padding: 20px;
 	float:left;}
+
+		#compartir{margin-top: 20px;
+			margin-left: 20px;}
 
 		
 	.banner{width: 370px;
