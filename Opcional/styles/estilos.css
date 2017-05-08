@@ -87,6 +87,8 @@ a{text-decoration: none;}
 	.menu_bar {
 	display:none;}
 
+
+
 	nav{width: 95.6%;
 	height: 60px;
 	background: #3EACA8;
@@ -296,6 +298,7 @@ text-align: left;}
 
 	header{display: none;}
 
+	/*Menu hamburguesa*/
 
 	nav {
 		width: 40%;
@@ -304,8 +307,6 @@ text-align: left;}
 		right:100%;
 		margin: 0;}
 
-
-		/*Menú hamburguesa*/
 	.menu_bar {
 		z-index: 100;
 		display:block;
@@ -444,6 +445,8 @@ text-align: left;}
   	height: 120px;
   	background: #000;  	
   	float: left;}
+  	iframe{width: 100%;
+ 		height: 100%;}
 
   			#bannersp2{display: none;}
 
@@ -530,17 +533,17 @@ text-align: left;}
 }
 
 /*Estilos para móvil*/
-@media only screen and (max-width:480px) 
+@media only screen and (max-width:360px) 
 { 
 
 	body{width: 100%;
-	height:1900px;
+	height:2210px;
 	min-width: 360px;}
 
 	header{display: none;}
 
 	nav {
-		width: 40%;
+		width: 50%;
 		height: calc(100% - 80px);
 		position: fixed;
 		right:100%;
@@ -571,7 +574,7 @@ text-align: left;}
 	.icon-menu{float: left;}
 	/*Menú hamburguesa*/
 
-	#logo{margin-left: 18%;
+	#logo{margin-left: 15%;
  		float: left;}
 
  	#fecha{margin-top: 1%;
@@ -583,26 +586,7 @@ text-align: left;}
 		color: #fff;
 		float: right; }
 
- 		input[type="search"]{
-    	width: 15%; /*ancho por defecto*/
-    	float: right;
-    	margin: 0% 4% 0% 15%;
-    	background: #ededed url('../images/search-icon.png') no-repeat 9px center; /*icono lupa*/
-   	 	padding: 9px 10px 9px 32px;
-    	border-radius: 8em;
-    	-webkit-transition: all .5s; /* transición de .5seg a todos los elementos para chrome*/
-    	-moz-transition: all .5s; /* transición de .5seg a todos los elementos para mozilla*/
-    	-o-transition: all .5s; /* transición de .5seg a todos los elementos para ophera*/
-    	transition: all .5s; /* transición de .5seg a todos los elementos*/
-    	outline: none; /* ocultar el fucos automático de los input */
-		}
-
-		input[type="search"]:focus{
-   		width: 8%; /*tamaño del boton buscar al hacer click*/
-    	padding-left: 20%; /*espacio entre el icono lupa y el placeholder*/
-    	color: #000;
-    	float: right;
-    	background-color: #fff;}
+ 		form{display: none;}
 
  
 	span {font-size: 1em;
@@ -627,7 +611,7 @@ text-align: left;}
   	width: 92%;
   	margin:0% auto;
   	margin-top: 93px;
-  	height: 270px;
+  	height: 320px;
   	background: #fff;
  	padding: 2%;}
  	
@@ -643,7 +627,7 @@ text-align: left;}
  	#galeria1{width: 92%;
   	margin:0% auto;
   	margin-top: 3%;
-  	height: 245px;
+  	height: 260px;
   	background: #fff;
  	padding: 2%; }
 
@@ -655,7 +639,7 @@ text-align: left;}
  	#paracomer2{width: 92%;
   	margin:0% auto;
   	margin-top: 3%;
-  	height: 245px;
+  	height: 325px;
   	background: #fff;
  	padding: 2%;}
 
@@ -668,7 +652,7 @@ text-align: left;}
  	#parabailar1{width: 92%;
   	margin:0% auto;
   	margin-top: 3%;
-  	height: 270px;
+  	height: 300px;
   	background: #fff;
  	padding: 2%;}
 
@@ -680,7 +664,7 @@ text-align: left;}
  	#editorial1{width: 92%;
   	margin:0% auto;
   	margin-top: 3%;
-  	height: 245px;
+  	height: 300px;
   	background: #fff;
  	padding: 2%;}
 
@@ -694,7 +678,7 @@ text-align: left;}
  	#experiencias1{width: 92%;
   	margin:0% auto;
   	margin-top: 3%;
-  	height: 245px;
+  	height: 250px;
   	background: #fff;
  	padding: 2%;}
 
@@ -705,8 +689,11 @@ text-align: left;}
  			margin-top:3%;
  			float: left;}
 
+ 	iframe{width: 100%;
+ 		height: 100%;}
+
  	#bannersp2{width: 92%;
- 		padding-left: 2%;
+ 	padding-left: 2%;
   	margin-left: 2%;
   	margin-top: 3%;
   	height: 100px;
@@ -723,11 +710,7 @@ text-align: left;}
 	text-align: left;
 	text-decoration: none;}
 
-	.actualizacion{ color: #000;
-	font-family: 'Open Sans', sans-serif; 
-	font-size: 0.7em;
-	float: right;
-	text-decoration: none;}
+	.actualizacion{ display: none;}
 
 
 	.tituloid{
@@ -759,15 +742,11 @@ footer{width: 100%;
 height: 108px;
 margin-top: 2.5%;
 padding-top: 2.5%;
-border-top: #fff 0.1em dashed;
+border-top: #fff 0.05em dashed;
 background-color: #000;
 float: left;}
 
-#logo2{margin-top: 1%;
-	margin-left: 8%;
-	margin-right: 9%;
-	margin-bottom: 2%;
-	float: left;}
+#logo2{display: none;}
 
 #ulf{list-style-type: none;}
 
