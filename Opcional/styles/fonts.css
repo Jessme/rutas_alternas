@@ -6,8 +6,22 @@
     url('../fonts/fuenteicomoon.woff?pl6amn') format('woff'),
     url('../fonts/fuenteicomoon.svg?pl6amn#fuenteicomoon') format('svg');
   font-weight: normal;
-  font-style: normal;
-}
+  font-style: normal;}
+
+  @font-face {
+    font-family: Yanone Kaffeesatz;
+    src: url(../fonts/yanonekaffeesatz-bold.ttf);
+    font-weight: bold;}
+ 
+@font-face {
+    font-family: Yanone Kaffeesatz;
+    src: url(../fonts/yanonekaffeesatz-regular.ttf);
+    font-weight: sans-serif;}
+ 
+@font-face {
+    font-family: Open Sans;
+    src: url(../fonts/opensans-regular.ttf);
+    font-weight: sans-serif;}
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
