@@ -1,105 +1,110 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="../styles/estilos.css">
+		<link rel="stylesheet" type="text/css" href="../styles/fonts.css">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans|Yanone+Kaffeesatz:300,400,700" rel="stylesheet">
-		<!-- Start WOWSlider.com HEAD section -->
-	<link rel="stylesheet" type="text/css" href="../styles/style.css" />
-	<script type="text/javascript" src="../js/jquery.js"></script>
-<!-- End WOWSlider.com HEAD section -->
 		<meta charset="utf-8">
-		<title>Galería</title>
 		<link rel="shortcut icon" href="../favicon.ico">
+		<title>Para Bailar</title>
 	</head>
 
-	<body id="bodygl">
+	<body id="bodybl">
+
+		<!-- Menu hamburguesa-->
+		<section class="menu_bar">
+			<a  class="bt-menu"><span class="icon-menu"></span>
+
+				<img src="../images/logo3.png" id="logo">
+				<form action="">
+        		<input type="search" name="nombre" placeholder="Buscar">
+    			</form>
+			</a>
+			
+		</section>
+		<!-- Menu hamburguesa-->
 
 		<header>
-		<a href="../index.html" ><img src="../images/logo.png" id="logo"></a>
+
+		<img src="../images/logo.png" id="logo">
 		<img src="../images/medellin.png" id="medellin">
-		<h2 id="fecha">Medellín, Marzo 16 de 2017. 07:30p.m</h2>
-		<img src="../images/buscar.png" id="buscar">
-		<a href="https://facebook.com/" ><img src="../images/fb.png" id="fb"></a>
-		<a href="https://youtube.com/"><img src="../images/yt.png" id="yt">
-		<a href="https://twitter.com/"><img src="../images/tw.png" href="#" id="tw"></a>
-		<a href="https://instagram.com/"><img src="../images/ig.png" id="ig"></a>
-		
+		<section id="fecha">
+				<script>
+	
+
+			var dayarray=new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado")
+			var montharray=new Array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre")
+
+			function getthedate(){
+			var mydate=new Date()
+			var year=mydate.getYear()
+			if (year < 1000)
+			year+=1900
+			var day=mydate.getDay()
+			var month=mydate.getMonth()
+			var daym=mydate.getDate()
+			if (daym<10)
+			daym="0"+daym
+			var hours=mydate.getHours()
+			var minutes=mydate.getMinutes()
+			var seconds=mydate.getSeconds()
+			var dn="AM"
+			if (hours>=12)
+			dn="PM"
+			if (hours>12){
+			hours=hours-12
+			}
+			if (hours==0)
+			hours=12
+			if (minutes<=9)
+			minutes="0"+minutes
+			if (seconds<=9)
+			seconds="0"+seconds
+			//change font size here
+			var cdate="<small><font color='ffffff' face='Yanone Kaffeesatz'><b>"+dayarray[day]+", "+montharray[month]+" "+daym+", "+year+" "+hours+":"+minutes+":"+seconds+" "+dn
+			+"</b></font></small>"
+			if (document.all)
+			document.all.clock.innerHTML=cdate
+			else if (document.getElementById)
+			document.getElementById("clock").innerHTML=cdate
+			else
+			document.write(cdate)
+			}
+			if (!document.all&&!document.getElementById)
+			getthedate()
+			function goforit(){
+			if (document.all||document.getElementById)
+			setInterval("getthedate()",1000)
+			}
+
+				</script>
+				<span id="clock"></span>
+			</section>
+		<form action="">
+        	<input type="search" name="nombre" placeholder="Buscar">
+    	</form>
+
+		<article id="redes"> 
+		<a href="https://facebook.com/" ><span class="icon-facebook"></span></a>
+		<a href="https://youtube.com/"><span class="icon-youtube"></span>
+		<a href="https://twitter.com/"><span class="icon-twitter"></span></a>
+		<a href="https://instagram.com/"><span class="icon-instagram"></span></a>
+		</article>
+
 		</header>
 
+		
 	<nav> 
 		<ul>
-			<li class="na"><a href="../index.html" class="botonera">Inicio</a></li>
-			<li class="na"><a href="../pages/paracomer.html" class="botonera">Para Comer</a></li>
-			<li class="na"><a href="../pages/parabailar.html" class="botonera">Para Bailar</a></li>
-			<li class="na"><a href="../pages/experiencias.html" class="botonera">Experiencias</a></li>
-			<li class="na"><a href="../pages/galeria.html" class="botonera">Galería</a></li>
-			<li class="na"><a href="../pages/editorial.html" class="botonera">Editorial</a></li>
+			<li class="na">  <a href="../index.html" class="botonera"><span class="icon-home"></span>Inicio</a></li>
+			<li class="na"><a href="../pages/paracomer.html" class="botonera"><span class="icon-spoon-knife"></span>Para Comer</a></li>
+			<li class="na"><a href="../pages/parabailar.html" class="botonera"><span class="icon-music"></span>Para Bailar</a></li>
+			<li class="na"><a href="../pages/experiencias.html" class="botonera"><span class="icon-svg"></span>Experiencias</a></li>
+			<li class="na"><a href="../pages/galeria.html" class="botonera"><span class="icon-images"></span>Galería</a></li>
+			<li class="na"><a href="../pages/editorial.html" class="botonera"><span class="icon-quill"></span>Editorial</a></li>
 		</ul>
 	</nav>
 
-
-	<section id="secgal">
-	<h2 class="nombreseccion">Galería</h2>
-	<h6 class="actualizacion"> Actualizado hace 20 minutos</h6>
-
-
-			<h3 class="titulo"> ¡NO DEJES DE DISFRUTAR!</h3>
-	
-			<p id="textogl"> Si te encuentras en Medellín o piensas hacerlo, no olvides mirar las imágenes que se encuentran en esta galería, allí  encontrarás las grandes experiencias que vivirás en una o varias noches en la ciudad. Antójate de estos exquisitos  platos, seguramente desearás volver.</p>
-
-			<iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fjessme.github.io%2Frutas_alternas%2Fpages%2Fgaleria.html&layout=button&size=small&mobile_iframe=true&width=81&height=20&appId" width="81" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" id="compartir"></iframe>
-
-	<!-- Start WOWSlider.com BODY section -->
-	<div id="wowslider-container1">
-	<div class="ws_images"><ul>
-		<li><img src="../images/data1/images/foto1.jpg" alt="Il Castello" title="Il Castello" id="wows1_0"/></li>
-		<li><img src="../images/data1/images/foto2.jpg" alt="Casablanca" title="Casablanca" id="wows1_1"/></li>
-		<li><img src="../images/data1/images/foto3.jpg" alt="Carmen " title="Carmen " id="wows1_2"/></li>
-		<li><img src="../images/data1/images/foto4.jpg" alt="El Cielo" title="El Cielo" id="wows1_3"/></li>
-		<li><a href="http://wowslider.com"><img src="../images/data1/images/foto5.jpg" alt="jquery carousel slider" title="Burger & Wings" id="wows1_4"/></a></li>
-		<li><img src="../images/data1/images/foto6.jpg" alt="Hard Rock Medellín" title="Hard Rock Medellín" id="wows1_5"/></li>
-	</ul></div>
-
-	<div class="ws_bullets"><div>
-
-		<a href="#" title="Il Castello"><span><img src="../images/data1/tooltips/foto1.jpg" alt="Il Castello"/>1</span></a>
-		<a href="#" title="Casablanca"><span><img src="../images/data1/tooltips/foto2.jpg" alt="Casablanca"/>2</span></a>
-		<a href="#" title="Carmen "><span><img src="../images/data1/tooltips/foto3.jpg" alt="Carmen "/>3</span></a>
-		<a href="#" title="El Cielo"><span><img src="../images/data1/tooltips/foto4.jpg" alt="El Cielo"/>4</span></a>
-		<a href="#" title="Burger & Wings"><span><img src="../images/data1/tooltips/foto5.jpg" alt="Burger & Wings"/>5</span></a>
-		<a href="#" title="Hard Rock Medellín"><span><img src="../images/data1/tooltips/foto6.jpg" alt="Hard Rock Medellín"/>6</span></a>
-		</div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.com">jquery photo gallery</a> by WOWSlider.com v7.7</div>
-	<div class="ws_shadow"></div>
-	</div>	
-	<script type="text/javascript" src="../js/wowslider.js"></script>
-	<script type="text/javascript" src="../js/script.js"></script>
-<!-- End WOWSlider.com BODY section -->
-	
-	
-	</section>
-
-	<a href="http://www.cafezorba.com.co/" target="_new"><aside class="banner"><img src="../images/banner5.jpg"></aside></a>
-
-
-	<footer >
-		<img src="../images/logo2.png" id="logo2">
-
-		<nav id="navf"> 
-			<ul id=ulf>
-				<li><a href="../index.html" class="foot">- Inicio</a></li>
-				<li><a href="../pages/paracomer.html" class="foot">- Para Comer</a></li>
-				<li><a href="../pages/parabailar.html" class="foot">- Para Bailar</a></li>
-				<li><a href="../pages/experiencias.html" class="foot">- Experiencias</a></li>
-				<li><a href="../pages/galeria.html" class="foot">- Galería</a></li>
-				<li><a href="../pages/editorial.html" class="foot">- Editorial</a></li>
-			</ul>
-		</nav>
-
-		<p id="textof">Rutas Alternas - Teléfono: (57)(4)3450675 </br>
-		Dirección: Carrera 59 N° 23 - 9 Medellín - Colombia </br>
-		© Copyright 2012 ® Todos los Derechos Reservados </p>
-
-	</footer>
 	
 </body>
-
