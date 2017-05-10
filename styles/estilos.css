@@ -407,7 +407,7 @@ text-align: left;}
  	#parabailar1{width: 40%;
   	margin-left: 4%;
   	margin-top: 3%;
-  	height: 330px;
+  	height: 360px;
   	background: #fff;
  	padding: 2%;
  	float: left;}
@@ -416,7 +416,7 @@ text-align: left;}
  	#editorial1{width: 40%;
   	margin-left: 4%;
   	margin-top: 3%;
-  	height: 330px;
+  	height: 360px;
   	background: #fff;
  	padding: 2%;
  	float: left;}
@@ -458,7 +458,7 @@ text-align: left;}
 	text-align: left;
 	text-decoration: none;}
 
-	.actualizacion{ display: none;}
+	.actualizacion{display: none;}
 
 
 	.tituloid{
