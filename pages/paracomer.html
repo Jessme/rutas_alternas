@@ -1,81 +1,110 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="../styles/estilos.css">
+		<link rel="stylesheet" type="text/css" href="../styles/fonts.css">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans|Yanone+Kaffeesatz:300,400,700" rel="stylesheet">
 		<meta charset="utf-8">
-		<title>Para Comer</title>
 		<link rel="shortcut icon" href="../favicon.ico">
+		<title>Para Bailar</title>
 	</head>
 
-	<body id="destacada">
+	<body id="bodybl">
+
+		<!-- Menu hamburguesa-->
+		<section class="menu_bar">
+			<a  class="bt-menu"><span class="icon-menu"></span>
+
+				<img src="../images/logo3.png" id="logo">
+				<form action="">
+        		<input type="search" name="nombre" placeholder="Buscar">
+    			</form>
+			</a>
+			
+		</section>
+		<!-- Menu hamburguesa-->
 
 		<header>
-		<a href="../index.html" ><img src="../images/logo.png" id="logo"></a>
+
+		<img src="../images/logo.png" id="logo">
 		<img src="../images/medellin.png" id="medellin">
-		<h2 id="fecha">Medellín, Marzo 16 de 2017. 07:30p.m</h2>
-		<img src="../images/buscar.png" id="buscar">
-		<a href="https://facebook.com/" ><img src="../images/fb.png" id="fb"></a>
-		<a href="https://youtube.com/"><img src="../images/yt.png" id="yt">
-		<a href="https://twitter.com/"><img src="../images/tw.png" href="#" id="tw"></a>
-		<a href="https://instagram.com/"><img src="../images/ig.png" id="ig"></a>
-		
+		<section id="fecha">
+			<script>	
+
+			var dayarray=new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado")
+			var montharray=new Array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre")
+
+			function getthedate(){
+			var mydate=new Date()
+			var year=mydate.getYear()
+			if (year < 1000)
+			year+=1900
+			var day=mydate.getDay()
+			var month=mydate.getMonth()
+			var daym=mydate.getDate()
+			if (daym<10)
+			daym="0"+daym
+			var hours=mydate.getHours()
+			var minutes=mydate.getMinutes()
+			var seconds=mydate.getSeconds()
+			var dn="AM"
+			if (hours>=12)
+			dn="PM"
+			if (hours>12){
+			hours=hours-12
+			}
+			if (hours==0)
+			hours=12
+			if (minutes<=9)
+			minutes="0"+minutes
+			if (seconds<=9)
+			seconds="0"+seconds
+			//change font size here
+			var cdate="<small><font color='ffffff' face='Yanone Kaffeesatz'><b>"+dayarray[day]+", "+montharray[month]+" "+daym+", "+year+" "+hours+":"+minutes+":"+seconds+" "+dn
+			+"</b></font></small>"
+			if (document.all)
+			document.all.clock.innerHTML=cdate
+			else if (document.getElementById)
+			document.getElementById("clock").innerHTML=cdate
+			else
+			document.write(cdate)
+			}
+			if (!document.all&&!document.getElementById)
+			getthedate()
+			function goforit(){
+			if (document.all||document.getElementById)
+			setInterval("getthedate()",1000)
+			}
+
+			</script>
+			<span id="clock"></span>
+		</section>
+
+		<form action="">
+        	<input type="search" name="nombre" placeholder="Buscar">
+    	</form>
+
+		<article id="redes"> 
+		<a href="https://facebook.com/" ><span class="icon-facebook"></span></a>
+		<a href="https://youtube.com/"><span class="icon-youtube"></span>
+		<a href="https://twitter.com/"><span class="icon-twitter"></span></a>
+		<a href="https://instagram.com/"><span class="icon-instagram"></span></a>
+		</article>
+
 		</header>
 
-	<nav id="navdest"> 
+		
+	<nav> 
 		<ul>
-			<li class="na"><a href="../index.html" class="botonera1">Inicio</a></li>
-			<li class="na"><a href="../pages/paracomer.html" class="botonera1">Para Comer</a></li>
-			<li class="na"><a href="../pages/parabailar.html" class="botonera1">Para Bailar</a></li>
-			<li class="na"><a href="../pages/experiencias.html" class="botonera1">Experiencias</a></li>
-			<li class="na"><a href="../pages/galeria.html" class="botonera1">Galería</a></li>
-			<li class="na"><a href="../pages/editorial.html" class="botonera1">Editorial</a></li>
+			<li class="na">  <a href="../index.html" class="botonera"><span class="icon-home"></span>Inicio</a></li>
+			<li class="na"><a href="../pages/paracomer.html" class="botonera"><span class="icon-spoon-knife"></span>Para Comer</a></li>
+			<li class="na"><a href="../pages/parabailar.html" class="botonera"><span class="icon-music"></span>Para Bailar</a></li>
+			<li class="na"><a href="../pages/experiencias.html" class="botonera"><span class="icon-svg"></span>Experiencias</a></li>
+			<li class="na"><a href="../pages/galeria.html" class="botonera"><span class="icon-images"></span>Galería</a></li>
+			<li class="na"><a href="../pages/editorial.html" class="botonera"><span class="icon-quill"></span>Editorial</a></li>
 		</ul>
 	</nav>
 
-	<section class="secinterna">
-	<h2 class="nombreseccion">Para comer</h2>
-	<h6 class="actualizacion"> Actualizado hace 5 horas</h6>
-	<h3 class="titulo"> LOS MEJORES LUGARES </br> PARA CENAR EN LA CIUDAD</h3>
-	<h4 class="entradilla"> Un ‘parche’ tranquilo para experimentar diferentes </br> platos y probar nuevos sabores.</h4>
-	<img src="../images/imagenpc.jpg" alt="Para_comer" title="Il Castello Restaurante">
-	<p class="textos">La lista es conformada por restaurantes ubicados en diferentes puntos de la ciudad, los cuales por años se han encargado de brindarle a ciudadanos y turistas grandes experiencias acompañadas de deliciosos sabores. No importa en qué sector de la ciudad estás, incluso si te encuentras en municipios aledaños, porque los buenos restaurantes se encuentran en cantidades. Acá se satisfacen los gustos de aquellos que se creen mexicanos, italianos y a los amantes de las hamburguesas y la demás comida rápida.</br>
-	Si se busca un lugar elegante y un poco costoso, Il Castello será el indicado para brindar una cena italiana y una gran experiencia en sus restaurantes; junto con este, Carmen también satisface los gustos de aquellos amantes de la comida gourmet. Si, por el contrario, se es un amante a las hamburguesas, en Medellín encontramos varios lugares donde disfrutar de ellas: La Pampa, reconocido por su excelente y tradicional sabor argentino en hamburguesas y demás carnes; Hard Rock Café, con unas hamburguesas al propio estilo norteamericano y Casablanca, esta última trae en sus carnes 100% de res un sabor que es más típico de nuestra región, al probarla nos remitimos a aquellos asados familiares, más casero, pero igual de deliciosa que las demás. 
-	</p>	
-	</section>
-
-	<a href="http://www.udem.edu.co/" target="_new"><aside class="banner"><img src="../images/banner2.jpg"></aside></a>
-
-	<section id="secinterpc">
-	<h2 class="nombreseccion">Para comer</h2>
-	<h6 class="actualizacion"> Actualizado hace 5 horas</h6>
-	<h3 class="titulo"> MERCADO DEL RÍO </br> LLEGÓ PISANDO FUERTE</h3>
-	<h4 class="entradilla"> Un nuevo espacio que tuvo gran acogida en Medellín.</h4>
-	<p class="textos">Mercado del Río llega a la ciudad a finales del 2016 con una manera diferente de cenar, es el sueño de un grupo de personas que ha abierto sus puertas y pone a disposición de la ciudad su gran y diversa oferta gastronómica.</br>
-	Está situada al lado del edificio de Bancolombia en la Av. Los Industriales con una gran simbolización histórica  de la ciudad, pues era allí una bodega desde donde se veía pasar el ferrocarril, por esta misma razón es que el lugar cobró vida destacando los ladrillos, el metal… basado en la estación de trenes.</br>
-	Se sabe que este mercado sobresale por su arquitectura, ofrece a sus clientes nuevas experiencias, pues quien lo visite puede transitar entre sus lugares, recorrerlos, sentir el olor de ese plato  que disfrutará, comerlo y pasar a otro sitio, pero todo en el mismo lugar.  Un aspecto importante es que las cocinas son abiertas y tienen una política que apuesta por los precios justos. Este lugar además se interesa por el vino y la cerveza, ofreciendo a sus consumidores constantes eventos para catar estos productos.
-
-	</section>
-
-	<footer >
-		<img src="../images/logo2.png" id="logo2">
-
-		<nav id="navf"> 
-			<ul id=ulf>
-				<li><a href="../index.html" class="foot">- Inicio</a></li>
-				<li><a href="../pages/paracomer.html" class="foot">- Para Comer</a></li>
-				<li><a href="../pages/parabailar.html" class="foot">- Para Bailar</a></li>
-				<li><a href="../pages/experiencias.html" class="foot">- Experiencias</a></li>
-				<li><a href="../pages/galeria.html" class="foot">- Galería</a></li>
-				<li><a href="../pages/editorial.html" class="foot">- Editorial</a></li>
-			</ul>
-		</nav>
-
-		<p id="textof">Rutas Alternas - Teléfono: (57)(4)3450675 </br>
-		Dirección: Carrera 59 N° 23 - 9 Medellín - Colombia </br>
-		© Copyright 2012 ® Todos los Derechos Reservados </p>
-
-	</footer>
 	
 </body>
-
