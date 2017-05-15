@@ -25,6 +25,7 @@ a{text-decoration: none;}
 	#logo{margin-left: 6.3%;
  	margin-top: 3.8%;
  	float:left;}
+ 		#logorsp{display: none;}
 
 	#medellin{margin-top: 4%;
 	margin-left: 30%;
@@ -78,7 +79,7 @@ a{text-decoration: none;}
 
 	#fecha{width: 18%;
 	padding-left: 2%;
-	margin: 4% 2% 1% 0% ;
+	margin: 4% 0% 1% 0% ;
 	text-decoration: none;
 	font-family: 'Yanone Kaffeesatz', bold;
 	font-size: 1.1em;
@@ -92,8 +93,7 @@ a{text-decoration: none;}
 	height: 60px;
 	background: #3EACA8;
 	padding-right: 2.2%;
-	padding-left: 2.2%;
-	}
+	padding-left: 2.2%;}
 
 	ul{list-style-type: none;}
 
@@ -294,17 +294,26 @@ text-align: left;}
 	min-width: 570px;
 	max-width: 768px;}
 
-	header{display: none;}
+	header{width: 100%;
+		position: fixed;
+		height: 90px;
+		background: #3EACA8;}
+
+	#logorsp{margin-left: 40%;
+			margin-top: 9px;}
+
+	#fecha{float: right;
+			margin-right: 5%;
+			margin-top: 7px;}
+			#logo{display: none;}
+			#medellin{display: none;}
+			#redes{display: none;}
+
+
+	#nav2{display: none;}
 
 	/*Menu hamburguesa*/
-
-	#nav2 {
-		width: 40%;
-		height: calc(100% - 50px);
-		position: fixed;
-		right:100%;
-		margin: 0;}
-
+	
 	.menu_bar {
 		z-index: 100;
 		display:block;
@@ -314,28 +323,104 @@ text-align: left;}
 		top:0;
 		background: #000;}
  
-	.bt-menu {
-		/*width: 100%;*/
-		background: #3EACA8;
-		display: block;
-		padding: 10px;
-		color: #fff;
-		overflow: hidden;
-		font-size: 2em;
-		font-family: 'Yanone Kaffeesatz', bold;
-		text-decoration: none;	}
+	.nav {
+  	position:absolute;
+  	width:200px;
+  	height:100vh;
+  	top:0;
+  	left:-220px; /*Ocultamos el menú en la parte izquierda para que no se vea a menos que pulsemos sobre la hamburguesa*/
+  	padding-top:47px;
+  	background-color: rgba(29, 33, 32, 1);
+  	border-right:4px solid #1D96B0;
+  	transition:all .5s ease; /*Damos a la caja del menú una transición para que tenga un desplazamiento suave*/
+}
+   /*Estilos de los li del menú*/
+   .limh{
+     display:block;
+     width:96%;
+     margin:0 auto;
+     line-height:2;
+     position:relative; /*Le damos una posición relativa para posteriormente añadirle el triangulo que indica que se está en la página actual del menú*/
+     border-bottom:.5px solid rgba(59, 62, 61, 1);
+     border-top:.5px solid rgba(59, 62, 61, 1);
+     background-color:transparent;
+     font-family: 'Yanone Kaffeesatz', bold;
+     font-size: 1em;
+     text-align:center;}
 
-	.icon-menu{float: left;}
-	/*Menú hamburguesa*/
+     a{color: #fff;}
 
-	#logo{margin-left: 22%;
- 		float: left;}
+
+       /*Damos colocamos el triangulo negro a la pestaña del menú dónde nos encontramos actualmente*/
+       .current:before {
+          content:"";
+          width:0;
+          height:0;
+          position:absolute; /*Le damos al before una posición absoluta relativa al li que lo contiene*/
+          border-top:17px solid transparent;
+          border-left:15px solid #1D2120;
+          border-bottom:17px solid transparent;
+          top:0px;
+          right:-15px; /*Lo posicionamos -15px a la derecha de su contenedor*/
+          z-index:4; /*le otorgamos un z-index alto para que se posicione arriba de otros elementeos*/
+       }
+      /*Colocamos el borde verde al triangulo por medio de otro trangulo verde*/
+      .current:after {
+          content:"";
+          width:0;
+          height:0;
+          position:absolute;/*Le damos al after una posición absoluta relativa al li que lo contiene*/
+          border-top:16.5px solid transparent;
+          border-bottom:17px solid transparent;
+          top:.5px;
+          right:-21px;
+          z-index:1;  /*le otorgamos un z-index bajo para que se posicione debajo del trinagulo negro*/
+      }
+  /*Estos son los estilos de la hamburguesa del menú que abre y cierra el mismo*/
+  .menu-toogle {
+    position:absolute; /*Lo posicionamos absolutamente para poder darle una posición y poder moverlo según el menú esté abierto o cerrado*/
+    width: 35px;
+    line-height:1.1;
+    text-align:center;
+    top:6.5px; /*Le damos una posición top y left en donde queramos que se encuentre la hamburguesa del menú*/
+    left: 8px; 
+    border-radius:3px;
+    background-color: #142b25;
+    transition: all .5s ease; /*Añadimos una transición para que realice un desplazamineto suave*/
+    z-index:10;
+  }
+    /*Añadimos la haburguesa y le damos unos estilos*/
+    .menu-toogle::before {
+      content:"☰";
+      font-size:2em;
+      color: white;
+      margin-top: 5px;
+      position: fixed; }
+
+
+    /*Estos son los estilos que le dan la funcionalidad al menú*/
+    /*El checkbox según esté activado o no hará que el menú aparezca o desaparezca*/
+    .checkbox {
+      display:none; /*Ocultamos el checkbox pues no nos interesa que se vea*/
+    }
+    .checkbox:checked ~ .nav {
+      left:0px; /*Le quitamos el left negativo para que el menú vuelva a su posición original*/
+      position:fixed; /* Fijamos el menú lateral para que se desplace cuando hagamos scroll*/
+    }
+    .checkbox:checked ~ .main-w {
+      margin-left:200px; /*Cuando el checkbox asigna un margen al contenedor principal para que se desplace junto con el menú*/
+    }
+    .checkbox:checked ~ .menu-toogle { 
+      left:208px;
+      position:fixed; /*Fijamos la hamburgues para que se desplace junto con el menú*/
+    }
+
 
  	
  	input[type="search"]{
     width: 15%; /*ancho por defecto*/
     float: right;
-    margin: 0% 4% 0% 20%;
+    margin: -5.5% 4% 0% 20%;
     background: #ededed url('../images/search-icon.png') no-repeat 9px center; /*icono lupa*/
    	padding: 9px 10px 9px 32px;
     border-radius: 8em;
@@ -353,24 +438,7 @@ text-align: left;}
     float: right;
     background-color: #fff;}
 
-    span {font-size: 1em;
-	margin-right: 3%;
-	margin-left: 3%;}
-
-	.na {display: block;}
- 
-	.botonera {
-	display: block;
-	width:100%;
-	height: 50px;
-	padding-top: 20px;
-	text-decoration: none;
-	font-size: 1.25em;
-	background: #3EACA8;
-	color: #000;
-	font-family: 'Yanone Kaffeesatz', bold;
-	}
-
+   
  	#paracomer1{
   	width: 50%;
   	margin-left: 4%;
@@ -534,70 +602,130 @@ text-align: left;}
 	height:2100px;
 	min-width: 360px;}
 
-	header{display: none;}
-
-	#nav2 {
-		width: 50%;
-		height: calc(100% - 80px);
+	header{width: 100%;
 		position: fixed;
-		right:100%;
-		margin-top: -4%;}
+		margin-top: -30%;
+		height: 90px;
+		background: #3EACA8;}
 
-	/*Menú hamburguesa*/	
+	#logorsp{margin-left: 30%;
+			margin-top: 20px;}
+
+			#fecha{display: none;}
+			#logo{display: none;}
+			#medellin{display: none;}
+			#redes{display: none;}
+			input{display: none;}
+
+
+	#nav2{display: none;}
+
+	/*Menu hamburguesa*/
+	
 	.menu_bar {
+		z-index: 100;
 		display:block;
 		width:100%;
-		height: 60px;
+		/*height: 90px;*/
 		position: fixed;
 		top:0;
-		background:#000;}
-
-	.bt-menu {
-		width: 100%;
-		background: #3EACA8;
-		display: block;
-		padding: 10px;
-		color: #fff;
-		overflow: hidden;	
-		font-size: 2em;
-		font-family: 'Yanone Kaffeesatz', bold;
-		text-decoration: none;}
-
-	.icon-menu{float: left;}
-	/*Menú hamburguesa*/
-
-	#logo{margin-left: 15%;
- 		float: left;}
-
- 	#fecha{margin-top: 1%;
-		margin-bottom: 1%;
-		margin-right: 3.8%;
-		text-decoration: none;
-		font-family: 'Yanone Kaffeesatz', bold;
-		font-size: 0.5em;
-		color: #fff;
-		float: right; }
-
- 		form{display: none;}
-
+		background: #000;}
  
-	span {font-size: 1em;
-		margin-right: 3%;
-		margin-left: 3%;}
+	.nav {
+  	position:absolute;
+  	width:150px;
+  	height:100vh;
+  	top:0;
+  	left:-220px; /*Ocultamos el menú en la parte izquierda para que no se vea a menos que pulsemos sobre la hamburguesa*/
+  	padding-top:47px;
+  	background-color: rgba(29, 33, 32, 1);
+  	color: #fff;
+  	border-right:4px solid #1D96B0;
+  	transition:all .5s ease; /*Damos a la caja del menú una transición para que tenga un desplazamiento suave*/
+}
+	a{color: #fff;}
 
-	.na {display: block;}
- 
-	.botonera {
-	display: block;
-	width:100%;
-	height: 50px;
-	padding-top: 20px;
-	text-decoration: none;
-	font-size: 1.25em;
-	background: #3EACA8;;
-	color: #000;
-	font-family: 'Yanone Kaffeesatz', bold;
-	}
+	 .nav_item{color: #fff;}
+
+   /*Estilos de los li del menú*/
+   .limh{
+     display:block;
+     width:96%;
+     margin:0 auto;
+     line-height:2;
+     position:relative; /*Le damos una posición relativa para posteriormente añadirle el triangulo que indica que se está en la página actual del menú*/
+     border-bottom:.5px solid rgba(59, 62, 61, 1);
+     border-top:.5px solid rgba(59, 62, 61, 1);
+     background-color:transparent;
+     font-family: 'Yanone Kaffeesatz', bold;
+     font-size: 1em;
+     text-align:center;
+     color: #000; }
+
+
+       /*Damos colocamos el triangulo negro a la pestaña del menú dónde nos encontramos actualmente*/
+       .current:before {
+          content:"";
+          width:0;
+          height:0;
+          position:absolute; /*Le damos al before una posición absoluta relativa al li que lo contiene*/
+          border-top:17px solid transparent;
+          border-left:15px solid #1D2120;
+          border-bottom:17px solid transparent;
+          top:0px;
+          right:-15px; /*Lo posicionamos -15px a la derecha de su contenedor*/
+          z-index:4; /*le otorgamos un z-index alto para que se posicione arriba de otros elementeos*/
+       }
+      /*Colocamos el borde verde al triangulo por medio de otro trangulo verde*/
+      .current:after {
+          content:"";
+          width:0;
+          height:0;
+          position:absolute;/*Le damos al after una posición absoluta relativa al li que lo contiene*/
+          border-top:16.5px solid transparent;
+          border-bottom:17px solid transparent;
+          top:.5px;
+          right:-21px;
+          z-index:1;  /*le otorgamos un z-index bajo para que se posicione debajo del trinagulo negro*/
+      }
+  /*Estos son los estilos de la hamburguesa del menú que abre y cierra el mismo*/
+  .menu-toogle {
+    position:absolute; /*Lo posicionamos absolutamente para poder darle una posición y poder moverlo según el menú esté abierto o cerrado*/
+    width: 35px;
+    line-height:1.1;
+    text-align:center;
+    top:6.5px; /*Le damos una posición top y left en donde queramos que se encuentre la hamburguesa del menú*/
+    left: 8px; 
+    border-radius:3px;
+    background-color: #142b25;
+    transition: all .5s ease; /*Añadimos una transición para que realice un desplazamineto suave*/
+    z-index:10;
+  }
+    /*Añadimos la haburguesa y le damos unos estilos*/
+    .menu-toogle::before {
+      content:"☰";
+      font-size:2em;
+      color: white;
+      margin-top: 10px;
+      position: fixed; }
+
+
+    /*Estos son los estilos que le dan la funcionalidad al menú*/
+    /*El checkbox según esté activado o no hará que el menú aparezca o desaparezca*/
+    .checkbox {
+      display:none; /*Ocultamos el checkbox pues no nos interesa que se vea*/
+    }
+    .checkbox:checked ~ .nav {
+      left:0px; /*Le quitamos el left negativo para que el menú vuelva a su posición original*/
+      position:fixed; /* Fijamos el menú lateral para que se desplace cuando hagamos scroll*/
+    }
+    .checkbox:checked ~ .main-w {
+      margin-left:200px; /*Cuando el checkbox asigna un margen al contenedor principal para que se desplace junto con el menú*/
+    }
+    .checkbox:checked ~ .menu-toogle { 
+      left:208px;
+      position:fixed; /*Fijamos la hamburgues para que se desplace junto con el menú*/
+    }
 
 	#paracomer1{
   	width: 92%;
